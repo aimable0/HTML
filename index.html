@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Registration Form</h1>
+
+<form role="form" aria-labelledby="form-title">
+    <h2 id="form-title">Create an Account</h2>
+
+    <!-- Full Name -->
+    <div>
+        <label for="fullname">Full Name</label>
+        <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            required
+            aria-required="true"
+        >
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+        >
+    </div>
+
+    <!-- Password -->
+    <div>
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="8"
+            pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}"
+            aria-required="true"
+            aria-describedby="passwordHelp"
+        >
+        <small id="passwordHelp"><br>
+            Password must be at least 8 characters long, include one uppercase letter and one number.
+        </small>
+
+    </div>
+
+    <!-- Terms & Conditions -->
+    <div>
+        <br>
+        <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            required
+            aria-required="true"
+            aria-describedby="termsDesc"
+        >
+        <label for="terms">I agree to the Terms and Conditions</label>
+        <small id="termsDesc">
+            You must accept the terms before submitting the form.
+        </small>
+    </div>
+
+    <!-- Submit -->
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+</body>
+</html>
